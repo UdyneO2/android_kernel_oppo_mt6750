@@ -20,14 +20,14 @@ This branch is for "kernel-3.10".
 
 # Build (example)
 ```bash
-$ apt install -yq bc gcc lib32z1
-$ git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 -b android-6.0.1_r32 --depth=1
-$ export Codename=(codename of your device)
-$ export ARCH=arm64
-$ export CROSS_COMPILE=$(pwd)/aarch64-linux-android-4.9/bin/aarch64-linux-android-
-$ cd android_kernel_oppo_mt6750
-$ make ${Codename}_debug_defconfig
-$ make -j$(nproc --all) 2>&1 | tee build.log
+apt install -yq bc gcc lib32z1
+git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 -b android-6.0.1_r32 --depth=1
+export Codename=f1s
+export ARCH=arm64
+export CROSS_COMPILE=$(pwd)/../aarch64-linux-android-4.9/bin/aarch64-linux-android-
+cd android_kernel_oppo_mt6750
+make ${Codename}_defconfig
+make -j$(nproc --all) 2>&1 | tee build.log
 ```
 There are also many optional build arguments in the "Makefile".
 Such as the "NET_BUILD_TYPE" and etc.
